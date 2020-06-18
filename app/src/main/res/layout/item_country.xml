@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/countryItemName"
+        style="@style/Wrapped"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/h1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Poland" />
+
+    <TextView
+        android:id="@+id/countryItemCurrencyHeader"
+        style="@style/CountryItemHeader"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/currency_header"
+        app:layout_constraintStart_toStartOf="@id/countryItemName"
+        app:layout_constraintTop_toBottomOf="@id/countryItemName" />
+
+    <TextView
+        android:id="@+id/countryItemCurrencyValue"
+        style="@style/CountryItemValue"
+        app:layout_constraintStart_toEndOf="@id/countryItemCurrencyHeader"
+        app:layout_constraintTop_toTopOf="@id/countryItemCurrencyHeader"
+        tools:text="zł" />
+
+    <TextView
+        android:id="@+id/countryItemPhoneNumberHeader"
+        style="@style/CountryItemHeader"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/phone_number_header"
+        app:layout_constraintStart_toStartOf="@id/countryItemName"
+        app:layout_constraintTop_toBottomOf="@id/countryItemCurrencyHeader" />
+
+    <TextView
+        android:id="@+id/countryItemPhoneNumberValue"
+        style="@style/CountryItemValue"
+        app:layout_constraintStart_toEndOf="@id/countryItemPhoneNumberHeader"
+        app:layout_constraintTop_toTopOf="@id/countryItemPhoneNumberHeader"
+        tools:text="111 222 333" />
+
+    <TextView
+        android:id="@+id/countryItemInternetDomainHeader"
+        style="@style/CountryItemHeader"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/domain_name_header"
+        app:layout_constraintStart_toStartOf="@id/countryItemName"
+        app:layout_constraintTop_toBottomOf="@id/countryItemPhoneNumberHeader" />
+
+    <TextView
+        android:id="@+id/countryItemInternetDomainValue"
+        style="@style/CountryItemValue"
+        app:layout_constraintStart_toEndOf="@id/countryItemInternetDomainHeader"
+        app:layout_constraintTop_toTopOf="@id/countryItemInternetDomainHeader"
+        tools:text="pl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
