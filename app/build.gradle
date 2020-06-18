@@ -1,36 +1,89 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion 29
-  buildToolsVersion "29.0.3"
+    compileSdkVersion Versions.compileSdk
 
-  defaultConfig {
-    applicationId "com.ryl.countrylist"
-    minSdkVersion 21
-    targetSdkVersion 29
-    versionCode 1
-    versionName "1.0"
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.minSdk
+        versionCode 1
+        versionName "1.0"
 
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
-  }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+
+        freeCompilerArgs += [
+                "-Xuse-experimental=kotlinx.coroutines.InternalCoroutinesApi",
+                "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        ]
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+
+    sourceSets.all { sourceSet ->
+        sourceSet.java.srcDirs += "src/${sourceSet.getName()}/kotlin"
+    }
 
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  implementation 'androidx.appcompat:appcompat:1.1.0'
-  implementation 'androidx.core:core-ktx:1.3.0'
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Libs.kotlin_stdlib
+    implementation Libs.koin
+    implementation Libs.koin_view_model
+
+    implementation Libs.androidx_paging
+    testImplementation Libs.androidx_paging_test
+
+    implementation Libs.androidX_coreKtx
+    implementation Libs.androidX_appCompat
+    implementation Libs.androidX_constraint_layout
+    implementation Libs.navigation_fragment
+    implementation Libs.navigation_ktx
+
+    implementation Libs.retrofit
+    implementation Libs.ok_http_logging_interceptor
+
+    implementation Libs.moshi
+    implementation Libs.moshi_adapters
+    implementation Libs.moshi_converter
+    implementation Libs.scalar_converter
+    kapt Libs.moshi_kapt
+
+    implementation Libs.androidX_room_runtime
+    implementation Libs.androidX_room_ktx
+    kapt Libs.androidX_room_kapt
+
+    implementation Libs.androidX_lifecycle
+    implementation Libs.androidX_lifecycle_ktx
+    implementation Libs.androidX_lifecycle_vmx
+
+    debugImplementation Libs.leak_canary
+
+    testImplementation TestLibs.junit_api
+    testRuntimeOnly TestLibs.junit_engine
+    testImplementation TestLibs.junit_params
+    testImplementation TestLibs.mockitoKotlin
 }
