@@ -17,7 +17,7 @@ class CountryViewHolder(
             item?.let {
                 countryItemName.text = item.name
                 countryItemCurrencyValue.text = item.currency
-                countryItemPhoneNumberValue.text = item.phoneNumber
+                countryItemPhoneNumberValue.text = item.phoneNumberCode
                 countryItemInternetDomainValue.text = item.internetDomainName
             }
         }

@@ -23,6 +23,8 @@ dependencies {
     implementation Libs.androidX_room_ktx
     kapt Libs.androidX_room_kapt
 
+    implementation Libs.joda
+
     testImplementation TestLibs.junit_api
     testRuntimeOnly TestLibs.junit_engine
     testImplementation TestLibs.junit_params

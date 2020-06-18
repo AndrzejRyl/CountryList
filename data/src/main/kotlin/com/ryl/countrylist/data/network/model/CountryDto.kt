@@ -15,7 +15,7 @@ data class CountryDto(
 fun CountryDto.toCountry() = Country(
     name = this.name ?: "",
     currency = this.currencies.first().name ?: "",
-    phoneNumber = this.phoneNumberCodes.first(),
+    phoneNumberCode = this.phoneNumberCodes.first(),
     internetDomainName = this.domainNames.first()
 )
 

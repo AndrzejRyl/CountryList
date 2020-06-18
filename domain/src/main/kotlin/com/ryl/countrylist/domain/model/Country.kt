@@ -7,6 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class Country(
     val name: String,
     val currency: String,
-    val phoneNumber: String,
+    val phoneNumberCode: String,
     val internetDomainName: String
 ) : Parcelable

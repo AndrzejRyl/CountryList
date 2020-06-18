@@ -24,6 +24,8 @@ object Versions {
     const val retrofit = "2.8.1"
     const val chuck = "1.1.0"
 
+    const val joda = "2.10.6"
+
     const val junit = "5.6.1"
     const val mockitoAndroid = "3.3.0"
     const val mockitoKotlin = "2.2.0"
@@ -31,11 +33,13 @@ object Versions {
 
 object Libs {
     const val gradle_classpath = "com.android.tools.build:gradle:${Versions.gradle}"
-    const val navigation_classpath = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    const val navigation_classpath =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val kotlin_classpath = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-    const val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
+    const val kotlin_coroutines =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
 
     const val leak_canary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
 
@@ -43,18 +47,22 @@ object Libs {
     const val androidX_coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
 
     const val androidX_lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
-    const val androidX_lifecycle_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
-    const val androidX_lifecycle_vmx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val androidX_lifecycle_ktx =
+        "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val androidX_lifecycle_vmx =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
 
-    const val androidX_constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-    const val androidx_paging =  "androidx.paging:paging-runtime:${Versions.paging_version}"
-    const val androidx_paging_test =  "androidx.paging:paging-common:${Versions.paging_version}"
+    const val androidX_constraint_layout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val androidx_paging = "androidx.paging:paging-runtime:${Versions.paging_version}"
+    const val androidx_paging_test = "androidx.paging:paging-common:${Versions.paging_version}"
 
     const val androidX_room_runtime = "androidx.room:room-runtime:${Versions.room}"
     const val androidX_room_kapt = "androidx.room:room-compiler:${Versions.room}"
     const val androidX_room_ktx = "androidx.room:room-ktx:${Versions.room}"
 
-    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigation_fragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigation_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 
     const val koin = "org.koin:koin-android:${Versions.koin}"
@@ -67,10 +75,13 @@ object Libs {
     const val scalar_converter = "com.squareup.retrofit2:converter-scalars:${Versions.retrofit}"
 
     const val ok_http = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
-    const val ok_http_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
+    const val ok_http_logging_interceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val chuck = "com.readystatesoftware.chuck:library:${Versions.chuck}"
     const val chuck_noop = "com.readystatesoftware.chuck:library-no-op:${Versions.chuck}"
+
+    const val joda = "net.danlew:android.joda:${Versions.joda}"
 }
 
 object TestLibs {

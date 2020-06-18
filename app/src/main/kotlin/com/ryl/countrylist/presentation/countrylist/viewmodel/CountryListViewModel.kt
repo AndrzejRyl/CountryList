@@ -22,6 +22,6 @@ class CountryListViewModel(
     fun refreshFailedRequest() = countryListDataSourceFactory.getSource()?.retry()
 
     companion object {
-        private const val LAZY_LOADING_PAGE_SIZE = 30
+        private const val LAZY_LOADING_PAGE_SIZE = 10
     }
 }

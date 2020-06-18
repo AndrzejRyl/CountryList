@@ -1,10 +1,14 @@
 package com.ryl.countrylist.data.di
 
+import androidx.room.Room
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.ryl.countrylist.data.datasource.country.CountryListDataSourceFactory
+import com.ryl.countrylist.data.local.Database
 import com.ryl.countrylist.data.network.CountriesAPI
 import com.ryl.countrylist.data.repository.CountryRepositoryImpl
+import com.ryl.countrylist.data.repository.LastListUpdateRepositoryImpl
 import com.ryl.countrylist.domain.repository.CountryRepository
+import com.ryl.countrylist.domain.repository.LastListUpdateRepository
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
@@ -16,7 +20,16 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 const val COUNTRIES_API_URL = "https://restcountries.eu/rest/v2/"
 
 val dataModule = module {
-
+    single(createdAtStart = true) {
+        Room.databaseBuilder(
+            get(),
+            Database::class.java,
+            Database.NAME
+        ).build()
+    }
+    factory {
+        get<Database>().countryDao()
+    }
     single {
         Moshi.Builder().build()
     }
@@ -44,7 +57,14 @@ val dataModule = module {
     }
     factory<CountryRepository> {
         CountryRepositoryImpl(
-            countriesAPI = get()
+            countriesAPI = get(),
+            countryDao = get(),
+            lastListUpdateRepository = get()
+        )
+    }
+    factory<LastListUpdateRepository> {
+        LastListUpdateRepositoryImpl(
+            context = androidContext()
         )
     }
 }
