@@ -1,7 +1,6 @@
 package com.ryl.countrylist
 
 import android.app.Application
-import com.ryl.countrylist.core.di.coreModule
 import com.ryl.countrylist.data.di.dataModule
 import com.ryl.countrylist.di.presentationModule
 import com.ryl.countrylist.domain.di.domainModule
@@ -20,7 +19,7 @@ class CountryListApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@CountryListApplication)
-            modules(modules = presentationModule + domainModule + dataModule + coreModule)
+            modules(modules = presentationModule + domainModule + dataModule)
         }
     }
 }
