@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CountryList</string>
     <string name="currency_header">Currency:</string>
-    <string name="phone_number_header">Phone number:</string>
+    <string name="phone_number_header">Phone number code:</string>
     <string name="domain_name_header">Domain name:</string>
     <string name="retry">Retry</string>
     <string name="fetch_fail">Fetch failed</string>

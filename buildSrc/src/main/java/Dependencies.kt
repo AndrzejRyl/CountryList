@@ -22,6 +22,7 @@ object Versions {
     const val okHttp = "4.5.0"
     const val koin = "2.1.5"
     const val retrofit = "2.8.1"
+    const val chuck = "1.1.0"
 
     const val junit = "5.6.1"
     const val mockitoAndroid = "3.3.0"
@@ -68,6 +69,8 @@ object Libs {
     const val ok_http = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val ok_http_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val chuck = "com.readystatesoftware.chuck:library:${Versions.chuck}"
+    const val chuck_noop = "com.readystatesoftware.chuck:library-no-op:${Versions.chuck}"
 }
 
 object TestLibs {

@@ -5,7 +5,7 @@ import com.ryl.countrylist.domain.model.Country
 
 interface CountryRepository {
 
-    fun getCountries(page: Int, limit: Int): CountryResults
+    suspend fun getCountries(page: Int, limit: Int): CountryResults
 }
 
 data class CountryResults(

@@ -10,6 +10,9 @@ dependencies {
     implementation Libs.retrofit
     implementation Libs.ok_http_logging_interceptor
 
+    debugImplementation Libs.chuck
+    releaseImplementation Libs.chuck_noop
+
     implementation Libs.moshi
     implementation Libs.moshi_adapters
     implementation Libs.moshi_converter
