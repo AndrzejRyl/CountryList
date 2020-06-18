@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/countryListFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.ryl.countrylist.presentation.main.MainActivity"
+        android:label="Main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/countryListFragment"
+        android:name="com.ryl.countrylist.presentation.countrylist.CountryListFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_country_list" />
+
+</navigation>
