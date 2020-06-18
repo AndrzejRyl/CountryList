@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/shared.gradle"
+
+dependencies {
+    implementation project(':core')
+
+    implementation Libs.kotlin_stdlib
+    implementation Libs.kotlin_coroutines
+
+    implementation Libs.koin
+
+    implementation Libs.androidX_coreKtx
+
+    api Libs.androidx_paging
+}

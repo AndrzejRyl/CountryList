@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/shared.gradle"
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    implementation project(':core')
+    implementation project(':domain')
+
+    implementation Libs.retrofit
+    implementation Libs.ok_http_logging_interceptor
+
+    implementation Libs.moshi
+    implementation Libs.moshi_adapters
+    implementation Libs.moshi_converter
+    implementation Libs.scalar_converter
+    kapt Libs.moshi_kapt
+
+    implementation Libs.androidX_room_runtime
+    implementation Libs.androidX_room_ktx
+    kapt Libs.androidX_room_kapt
+
+    testImplementation TestLibs.junit_api
+    testRuntimeOnly TestLibs.junit_engine
+    testImplementation TestLibs.junit_params
+
+    testImplementation TestLibs.mockitoKotlin
+}

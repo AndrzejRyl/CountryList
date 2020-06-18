@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/shared.gradle"
+
+dependencies {
+    api Libs.kotlin_stdlib
+    api Libs.kotlin_coroutines
+
+    api Libs.koin
+}
